@@ -7,7 +7,9 @@ const MovieCarousel: FC = () => {
   return (
     <>
     <BannerPage />
-    <Suggestions />
+    <Suggestions Heading={"Latest Release"} />
+    <Suggestions Heading={"Continue Watching"} />
+    <Suggestions Heading={"Trending in USA"} />
     </>
   );
 };

@@ -90,3 +90,19 @@
 .movieDetails span {
     font-weight: 700;
 }
+.titleSection {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+.rightPart {
+    cursor: pointer;
+}
+.rightPart:hover {
+    color: rgba(243, 243, 243, 0.742);
+}

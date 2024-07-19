@@ -6,7 +6,11 @@ import movieData from "../../constants/data";
 import styles from "./Suggestions.module.css";
 import { Modal } from "../Modal/Modal";
 
-const Suggestions: FC = () => {
+interface SuggestionsProps {
+  Heading: string;
+}
+
+const Suggestions: FC<SuggestionsProps> = ({ Heading }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const settings = {
     dots: false,
@@ -47,6 +51,14 @@ const Suggestions: FC = () => {
   return (
     <div className={styles.carouselContainer}>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <div className={styles.titleSection}>
+        <div className={styles.leftPart}>
+          {Heading}
+        </div>
+        <div className={styles.rightPart}>
+          View All &gt;
+        </div>
+      </div>
       <Slider {...settings}>
         {movieData.map((movie) => (
           <div key={movie.id} className={styles.carouselItem} onClick={handleMovieClick}>
