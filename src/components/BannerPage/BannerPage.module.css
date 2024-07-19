@@ -1,0 +1,124 @@
+
+.carouselItem {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    overflow: hidden; 
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.carouselCaption {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    text-align: left;
+    z-index: 1; 
+    padding: 10px;
+    border-radius: 5px;
+    /* width: 310px; */
+}
+
+.carouselLogo {
+    width: 50%;
+    margin-bottom: 30px;
+}
+.movieDetailsLine {
+    display: flex !important;
+    gap: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #bbbbbb;
+}
+.movieDescription {
+    width: 300px;
+    font-size: 13px;
+    color: #bbbbbb;
+    margin-top: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 13px;
+    background-color: rgba(171, 171, 171, 0.315);
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: rgb(230, 230, 230);
+    font-weight: 600;
+}
+.uaTag {
+    background-color: rgba(128, 128, 128, 0.626);
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: rgb(209, 209, 209);
+}
+.watchButton button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background-color: #e1e6f0d4;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 23vw;
+    color: black;
+}
+.watchButton button:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+    background-color: #e1e6f0;
+}
+.watchButton span {
+    font-size: 20px;
+}
+
+/* Media query started */
+
+@media (max-width: 768px) {
+    .carouselCaption {
+        left: 60px;
+        width: 250px;
+    }
+    .movieDetailsLine {
+        font-size: 10px;
+    }
+    .uaTag {
+        font-size: 10px;
+    }
+    .movieDescription {
+        font-size: 12px;
+        width: 250px;
+    }
+    .tag {
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .watchButton button {
+        font-size: 12px;
+        width: 50vw;
+        font-weight: 500;
+        padding: 5px;
+    }
+}
