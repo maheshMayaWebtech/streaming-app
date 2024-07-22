@@ -69,7 +69,7 @@ const Categories: FC = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
@@ -89,7 +89,7 @@ const Categories: FC = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           arrows: false
         },
       },

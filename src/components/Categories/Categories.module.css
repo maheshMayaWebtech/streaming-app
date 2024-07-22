@@ -20,7 +20,7 @@
   
   .carouselContainer {
     background-color: #1a1a1a;
-    padding: 80px 50px 80px 100px;
+    padding: 80px 50px 80px 50px;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 
@@ -109,4 +109,15 @@
     background: #333;
     border-radius: 0 0 15px 15px;
   }
-  
+  @media (max-width: 768px) {
+    .carouselItem {
+      height: 200px !important;
+      width: 100px;
+    }
+    .categoryCard img {
+      height: 200px;
+    }
+    .categoryName {
+      font-size: 12px;
+    }
+  }

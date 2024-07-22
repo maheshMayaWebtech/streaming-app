@@ -2,7 +2,7 @@
   padding: 20px;
   background-color: #252525;
   margin-top: -6px;
-  padding-left: 100px;
+  padding-left: 50px;
 }
 
 .carouselItem {
@@ -170,5 +170,12 @@
   .rightPart {
     font-size: 10px;
     height: 15px;
+  }
+  .movieCard {
+    /* width: 100px !important; */
+    height: 200px !important;
+  }
+  .carouselContainer {
+    /* padding-left: 20px; */
   }
 }

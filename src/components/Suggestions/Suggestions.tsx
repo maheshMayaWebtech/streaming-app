@@ -50,7 +50,7 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading, moviesList, numberEnabled 
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
