@@ -14,7 +14,7 @@ const MovieCarousel: FC = () => {
       <BannerPage />
       <Suggestions Heading={"Latest Release"} moviesList={moviesList} numberEnabled={true} />
       <VideoBanner />
-      <Suggestions Heading={"Continue Watching"} moviesList={moviesList} numberEnabled={false} />
+      <Suggestions Heading={"Popular Shows"} moviesList={moviesList} numberEnabled={false} />
       <Features />
       <Categories />
       <Suggestions Heading={"Trending in USA"} moviesList={moviesList} numberEnabled={false} />
