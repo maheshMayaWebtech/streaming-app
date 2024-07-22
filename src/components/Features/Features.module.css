@@ -66,4 +66,28 @@
   .cardIcon {
     margin: 15px 0;
   }
+  @media (max-width: 768px) {
+    .featureCards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 25px;
+      gap: 10px;
+    }
+    .card {
+      width: 100%;
+    }
+    .cardTitle {
+      font-size: 12px;
+    }
+    .cardSubTitle {
+      font-size: 10px;
+    }
+    .mainFeature .title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .mainFeature {
+      padding-bottom: 10px;
+    }
+  }
   

@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
-import styles from './VideoBanner.module.css';
+import { FC, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import styles from "./VideoBanner.module.css";
+import { Modal } from "../Modal/Modal";
 
 interface Video {
   id: number;
@@ -14,13 +15,30 @@ interface Video {
 const videos: Video[] = [
   {
     id: 1,
-    title: 'THE DARK BEAUTY',
+    title: "THE DARK BEAUTY",
     description: `Shadow Blitzstrike is a dynamic and elusive move executed with lightning-fast precision. The user channels dark`,
-    videoUrl: 'https://res.cloudinary.com/dqcr5yn0b/video/upload/v1721641064/e86032ef-9397-4888-9d12-7246be9d81bb_1_dr1m1b.mp4'
+    videoUrl:
+      "https://res.cloudinary.com/dqcr5yn0b/video/upload/v1721641064/e86032ef-9397-4888-9d12-7246be9d81bb_1_dr1m1b.mp4",
+  },
+  {
+    id: 2,
+    title: "THE DARK BEAUTY",
+    description: `Shadow Blitzstrike is a dynamic and elusive move executed with lightning-fast precision. The user channels dark`,
+    videoUrl:
+      "https://res.cloudinary.com/dqcr5yn0b/video/upload/v1721641064/e86032ef-9397-4888-9d12-7246be9d81bb_1_dr1m1b.mp4",
+  },
+  {
+    id: 3,
+    title: "THE DARK BEAUTY",
+    description: `Shadow Blitzstrike is a dynamic and elusive move executed with lightning-fast precision. The user channels dark`,
+    videoUrl:
+      "https://res.cloudinary.com/dqcr5yn0b/video/upload/v1721641064/e86032ef-9397-4888-9d12-7246be9d81bb_1_dr1m1b.mp4",
   },
 ];
 
 const VideoBanner: FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -28,12 +46,20 @@ const VideoBanner: FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
+  };
+  const handleMovieClick = (): void => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = (): void => {
+    setIsModalOpen(false);
   };
 
   return (
     <div className={styles.videoContainer}>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
       <Slider {...settings}>
         {videos.map((video) => (
           <div key={video.id} className={styles.videoFrame}>
@@ -43,9 +69,16 @@ const VideoBanner: FC = () => {
             </video>
             <div className={styles.overlay}>
               <div className={styles.textContent}>
+                <div className={styles.videoTags}>
+                  <img src="/01.png" alt="logo" />
+                  <img src="/02.png" alt="logo" />
+                  <img src="/03.png" alt="logo" />
+                </div>
                 <h1 className={styles.title}>{video.title}</h1>
                 <p className={styles.description}>{video.description}</p>
-                <button className={styles.watchButton}>Watch Now</button>
+                <div className={styles.buttonSection}>
+                  <button className={styles.watchButton} onClick={handleMovieClick}>Watch Now</button>
+                </div>
               </div>
             </div>
           </div>

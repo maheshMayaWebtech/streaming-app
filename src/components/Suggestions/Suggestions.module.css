@@ -75,6 +75,9 @@
 .movieCard:hover .movieSmallDescription {
   display: none;
 }
+.movieCard:hover .numbers {
+  display: none;
+}
 .movieCard:hover .movieDetails {
   display: block;
   margin-top: 10px;
@@ -159,4 +162,13 @@
     left: -48px;
     color: white;
     z-index: 100;
+}
+@media (max-width: 768px) {
+  .leftPart {
+    font-size: 15px;
+  }
+  .rightPart {
+    font-size: 10px;
+    height: 15px;
+  }
 }

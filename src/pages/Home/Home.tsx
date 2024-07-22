@@ -12,12 +12,12 @@ const MovieCarousel: FC = () => {
   return (
     <>
       <BannerPage />
-      <Suggestions Heading={"Latest Release"} moviesList={moviesList} />
-      <Features />
-      <Suggestions Heading={"Continue Watching"} moviesList={moviesList} />
-      <Categories />
+      <Suggestions Heading={"Latest Release"} moviesList={moviesList} numberEnabled={true} />
       <VideoBanner />
-      <Suggestions Heading={"Trending in USA"} moviesList={moviesList} />
+      <Suggestions Heading={"Continue Watching"} moviesList={moviesList} numberEnabled={false} />
+      <Features />
+      <Categories />
+      <Suggestions Heading={"Trending in USA"} moviesList={moviesList} numberEnabled={false} />
     </>
   );
 };

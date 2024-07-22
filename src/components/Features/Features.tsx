@@ -33,7 +33,7 @@ const featureData: Feature[] = [
 const Features: FC = () => {
   return (
     <div className={styles.mainFeature}>
-      <div className={styles.title}>STREAM IS SUPERIOR LIVE <br /> TV STREAMING</div>
+      <div className={styles.title}>STREAMIO IS SUPERIOR LIVE <br /> TV STREAMING</div>
       <div className={styles.featureCards}>
         {featureData.map((feature, index) => (
           <div className={styles.card} key={index}>

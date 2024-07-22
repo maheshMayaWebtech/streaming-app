@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import NotFoundPage from "./pages/NotFoundPage";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Footer from "./components/Footer/Footer";
 
 const App: FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: FC = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
+    <Footer />
     </>
   );
 };

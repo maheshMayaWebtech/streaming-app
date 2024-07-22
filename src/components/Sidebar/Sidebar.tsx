@@ -20,6 +20,9 @@ const sidebarItems = [
 const Sidebar: FC = () => {
   return (
     <div className={styles.sidebar}>
+      <div className={styles.sidebarItem}>
+        <img src="/logoSmall.png" alt="logoSmall" width={30} />
+      </div>
       {sidebarItems.map((item, index) => (
         <div key={index} className={styles.sidebarItem}>
           <item.icon className={styles.icon} />

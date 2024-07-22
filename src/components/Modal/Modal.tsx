@@ -17,13 +17,13 @@ export function Modal({ isOpen, onClose }: ModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogTrigger asChild></DialogTrigger>
-      <DialogContent className="sm:max-w-[610px]">
+      <DialogContent className="sm:max-w-[1000px]" style={{backgroundColor: 'black', color: 'white'}}>
         <DialogHeader>
           <DialogTitle>Sci-Fi Short Film “FTL" | DUST</DialogTitle>
           <DialogDescription>
             <iframe
-              width="560"
-              height="315"
+              width="800"
+              height="515"
               src="https://www.youtube.com/embed/t8LD0iUYv80?si=_IxlqbR2u_CIe1WQ"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

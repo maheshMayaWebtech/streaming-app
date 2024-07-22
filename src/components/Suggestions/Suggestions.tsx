@@ -22,9 +22,10 @@ import {
 interface SuggestionsProps {
   Heading: string;
   moviesList: Movie[];
+  numberEnabled: boolean;
 }
 
-const Suggestions: FC<SuggestionsProps> = ({ Heading, moviesList }) => {
+const Suggestions: FC<SuggestionsProps> = ({ Heading, moviesList, numberEnabled = false }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const settings = {
     dots: false,
@@ -95,9 +96,7 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading, moviesList }) => {
             onClick={handleMovieClick}
           >
             <div className={styles.movieCard}>
-              <div className={styles.numbers}>
-                {numberMap[index + 1]}
-              </div>
+              {numberEnabled && <div className={styles.numbers}>{numberMap[index + 1]}</div>}
               <img
                 src={movie.thumbnail_horizontal}
                 alt={movie.title}

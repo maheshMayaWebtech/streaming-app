@@ -82,6 +82,9 @@
   cursor: pointer;
   width: 23vw;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .watchButton button:hover {
   transform: scale(1.02);
