@@ -1,17 +1,18 @@
+import { Movie } from "@/pages/Home/useHome";
 import { FC, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import movieData from "../../constants/data";
-import styles from "./Suggestions.module.css";
 import { Modal } from "../Modal/Modal";
+import styles from "./Suggestions.module.css";
 
 interface SuggestionsProps {
   Heading: string;
+  moviesList: Movie[];
 }
 
-const Suggestions: FC<SuggestionsProps> = ({ Heading }) => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+const Suggestions: FC<SuggestionsProps> = ({ Heading, moviesList }) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const settings = {
     dots: false,
     infinite: true,
@@ -40,11 +41,12 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading }) => {
       },
     ],
   };
-  const handleMovieClick = () => {
+
+  const handleMovieClick = (): void => {
     setIsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (): void => {
     setIsModalOpen(false);
   };
 
@@ -52,16 +54,16 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading }) => {
     <div className={styles.carouselContainer}>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
       <div className={styles.titleSection}>
-        <div className={styles.leftPart}>
-          {Heading}
-        </div>
-        <div className={styles.rightPart}>
-          View All &gt;
-        </div>
+        <div className={styles.leftPart}>{Heading}</div>
+        <div className={styles.rightPart}>View All &gt;</div>
       </div>
       <Slider {...settings}>
-        {movieData.map((movie) => (
-          <div key={movie.id} className={styles.carouselItem} onClick={handleMovieClick}>
+        {moviesList.map((movie) => (
+          <div
+            key={movie.id}
+            className={styles.carouselItem}
+            onClick={handleMovieClick}
+          >
             <div className={styles.movieCard}>
               <img
                 src={movie.thumbnail_horizontal}
@@ -71,7 +73,9 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading }) => {
               <div className={styles.movieSmallDescription}>
                 <div className={styles.movieTitle}>
                   {movie.title}
-                  <div className={styles.movieRating}>Rating: {movie.rating}</div>
+                  <div className={styles.movieRating}>
+                    Rating: {movie.rating}
+                  </div>
                 </div>
                 <div className={styles.duration}>
                   Duration: {movie.duration_minutes} mins
@@ -81,10 +85,19 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading }) => {
                 <h3 className={styles.movieTitle}>{movie.title}</h3>
                 <p className={styles.movieRating}>Rating: {movie.rating}</p>
                 <div className={styles.movieDetails}>
-                  <p><span>Director:</span> {movie.director}</p>
-                  <p><span>Cast:</span> {movie.cast.map((c) => c.name).join(", ")}</p>
-                  <p><span>Genre:</span> {movie.genre.join(", ")}</p>
-                  <p><span>Synopsis:</span> {movie.synopsis}</p>
+                  <p>
+                    <span>Director:</span> {movie.director}
+                  </p>
+                  <p>
+                    <span>Cast:</span>{" "}
+                    {movie.cast.map((c) => c.name).join(", ")}
+                  </p>
+                  <p>
+                    <span>Genre:</span> {movie.genre.join(", ")}
+                  </p>
+                  <p>
+                    <span>Synopsis:</span> {movie.synopsis}
+                  </p>
                 </div>
               </div>
             </div>

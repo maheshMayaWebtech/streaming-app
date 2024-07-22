@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import movieDetails from "../../constants/movieDetails";
 import styles from "./BannerPage.module.css";
-// import api from '../../config/apiConfig';
 
 const BannerPage: FC = () => {
   // useEffect(() => {
